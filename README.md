@@ -2,6 +2,7 @@
 
 > API 문서 : https://documenter.getpostman.com/view/10215031/UVyn2e3H
 
+
 ### 기능
 
 1. 회원가입
@@ -9,6 +10,15 @@
 3. 상품 조회
 4. 상품 주문
 5. 주문 내역 조회
+
+<br>
+
+### 애플리케이션 구동
+
+> +x 권한 확인 / 설정 필요
+
+`./start.sh`
+
 
 <br><br>
 
