@@ -1,0 +1,67 @@
+buildscript {
+    ext {
+        ApplicationVersion = '1.0'
+        SpringBootVersion = '2.6.4'
+        SpringBootDependencyManagentVersion = '1.0.11.RELEASE'
+    }
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${SpringBootVersion}")
+        classpath "io.spring.gradle:dependency-management-plugin:${SpringBootDependencyManagentVersion}"
+    }
+}
+
+subprojects {
+    apply plugin: 'java'
+    apply plugin: 'org.springframework.boot'
+    apply plugin: 'io.spring.dependency-management'
+
+    group 'com.gg_pigs'
+    version ApplicationVersion
+    sourceCompatibility = 11
+
+    repositories {
+        mavenCentral()
+    }
+
+    configurations {
+        compileOnly {
+            extendsFrom annotationProcessor
+        }
+    }
+}
+
+project(':app-web') {
+    bootJar {
+        archiveName("toy-app-web-${ApplicationVersion}.jar")
+    }
+    jar {
+        archiveName("toy-app-web-${ApplicationVersion}.jar")
+    }
+    dependencies {
+        implementation project(':domains')
+    }
+}
+
+project(':app-web-order') {
+    bootJar {
+        archiveName("toy-app-web-order-${ApplicationVersion}.jar")
+    }
+    jar {
+        archiveName("toy-app-web-order-${ApplicationVersion}.jar")
+    }
+    dependencies {
+        implementation project(':domains')
+    }
+}
+
+project(':domains') {
+    bootJar {
+        enabled = false
+    }
+    jar {
+        enabled = true
+    }
+}

@@ -1,0 +1,5 @@
+rootProject.name = 'assignment'
+include 'app-web'
+include 'app-web-order'
+include 'domains'
+

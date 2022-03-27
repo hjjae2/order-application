@@ -1,0 +1,52 @@
+server:
+  shutdown: graceful
+  port: 8081
+
+spring:
+  datasource:
+    url: jdbc:h2:tcp://localhost/~/Dev/h2/bin/demo
+    # url: jdbc:h2:mem:demo
+    username: sa
+    password: sa
+    driver-class-name: org.h2.Driver
+  jpa:
+    properties:
+      hibernate:
+        format_sql: true
+    show-sql: false
+    open-in-view: false
+    defer-datasource-initialization: true
+    hibernate:
+      ddl-auto: none
+  h2:
+    console:
+      enabled: true
+      path: /h2
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "health"
+
+logging:
+  level:
+    ROOT: INFO
+#    org.hibernate: DEBUG
+#    org.hibernate.type.descriptor.sql.BasicBinder: DEBUG
+#    org.springframework.orm: DEBUG
+#    org.springframework.transaction: DEBUG
+#    com.zaxxer.hikari: TRACE
+#    com.mysql.cj.jdbc: TRACE
+
+application:
+  kafka:
+    consumer:
+      default:
+        bootstrap-server: "kafka.hj2server.ddns.net:9092"
+        group-id: "toy-assignment-default-consumer-group-1"
+        auto-offset-reset: "earliest"
+      order-request:
+        bootstrap-server: "kafka.hj2server.ddns.net:9092"
+        group-id: "toy-assignment-order-request-consumer-group-1"
+        auto-offset-reset: "earliest"

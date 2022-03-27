@@ -1,0 +1,42 @@
+{
+  "groups": [
+    {
+      "name": "application.kafka.producer.default",
+      "type": "com.toy.modules.kafka.KafkaProducerProperty$KafkaProducerDefaultProperty",
+      "sourceType": "com.toy.modules.kafka.KafkaProducerProperty$KafkaProducerDefaultProperty"
+    },
+    {
+      "name": "application.kafka.producer.order-request",
+      "type": "com.toy.modules.kafka.KafkaProducerProperty$KafkaProducerEmsProperty",
+      "sourceType": "com.toy.modules.kafka.KafkaProducerProperty$KafkaProducerEmsProperty"
+    }
+  ],
+  "properties": [
+    {
+      "name": "application.kafka.producer.default.bootstrap-server",
+      "type": "java.lang.String",
+      "sourceType": "com.toy.modules.kafka.KafkaProducerProperty$KafkaProducerDefaultProperty"
+    },
+    {
+      "name": "application.kafka.producer.default.linger-ms",
+      "type": "java.lang.Integer",
+      "sourceType": "com.toy.modules.kafka.KafkaProducerProperty$KafkaProducerDefaultProperty"
+    },
+    {
+      "name": "application.kafka.producer.order-request.bootstrap-server",
+      "type": "java.lang.String",
+      "sourceType": "com.toy.modules.kafka.KafkaProducerProperty$KafkaProducerEmsProperty"
+    },
+    {
+      "name": "application.kafka.producer.order-request.linger-ms",
+      "type": "java.lang.Integer",
+      "sourceType": "com.toy.modules.kafka.KafkaProducerProperty$KafkaProducerEmsProperty"
+    },
+    {
+      "name": "application.kafka.producer.order-request.topic",
+      "type": "java.lang.String",
+      "sourceType": "com.toy.modules.kafka.KafkaProducerProperty$KafkaProducerEmsProperty"
+    }
+  ],
+  "hints": []
+}

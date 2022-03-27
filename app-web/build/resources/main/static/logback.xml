@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<configuration>
+    <!-- Appender -->
+    <appender name="StdOutAppender" class="ch.qos.logback.core.ConsoleAppender">
+        <layout class="ch.qos.logback.classic.PatternLayout">
+            <Pattern>[%magenta(%d{yyyy-MM-dd HH:mm:ss}:%relative)] | [%thread] | [%highlight(%level)] %cyan(%logger{35}) - %msg%n</Pattern>
+        </layout>
+    </appender>
+
+    <!-- Root -->
+    <root level="INFO">
+        <appender-ref ref="StdOutAppender"/>
+    </root>
+</configuration>
